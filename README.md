@@ -45,31 +45,39 @@ This dataset was chosen because it is large, complex, and representative of real
 
 ---
 
-## Project Structure (Planned)
+## Project Structure
+
 airline-delay-bottleneck-pipeline/
 │
 ├── data/
-│ ├── raw/ # Raw downloaded datasets
-│ └── processed/ # Cleaned and transformed data
+│   ├── raw/
+│   │   └── airline_delay_cause.csv
+│   └── processed/
+│       └── airline_delay_clean.csv
 │
 ├── notebooks/
-│ ├── 01_exploration.ipynb
-│ ├── 02_cleaning.ipynb
-│ └── 03_analysis.ipynb
-│
-├── src/
-│ ├── data_loader.py
-│ ├── data_cleaning.py
-│ └── feature_engineering.py
-│
-├── outputs/
-│ ├── figures/
-│ └── summaries/
+│   ├── 01_ingestion_cleaning.ipynb
+│   └── 02_time_analysis.ipynb
 │
 ├── README.md
-└── requirements.txt
+├── LICENSE
+└── .gitignore
 
----
+## Reproducibility
+
+1. Clone the repository
+2. Install dependencies (pandas, matplotlib)
+3. Run notebooks in order:
+   - 01_ingestion_cleaning.ipynb
+   - 02_time_analysis.ipynb
+
+
+## Key Findings
+
+- Smaller regional airports show the highest delay rates, but Newark (EWR) stands out as a major hub with both high delay rate and high volume.
+- Carrier and late-aircraft delays account for the majority of total delay minutes.
+- Delay rates peak during summer months (June–July) and year-end (December), indicating seasonal congestion and weather effects.
+
 
 ## Methodology
 
@@ -136,3 +144,4 @@ These parallels make the project relevant for administrative, government, and op
 - Reproducible analysis  
 - Technical documentation  
 - Clear communication of insights  
+
